@@ -22,8 +22,7 @@
                 'assets/images/pic10.jpg'
             ];
 
-           $scope.changeSlide = function(current) {
-               
+           $scope.changeSlide = function(current) {  
                if (angular.isNumber(current)) {
                     $scope.activeItem = current;
                } else if (current === 'prev') {
