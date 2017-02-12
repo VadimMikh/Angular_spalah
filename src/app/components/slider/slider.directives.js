@@ -1,4 +1,4 @@
-(function() {
+(function () {
 	'use strict';
 
 	angular
@@ -6,9 +6,9 @@
 		.directive('slider', function () {
 			return {
 				restrict: 'EA',
-                replace: true,
+				replace: true,
 				scope: {
-                    slides: "="
+					slides: "="
 				},
 				templateUrl: 'app/components/slider/slidertemp.html',
 				controller: 'SliderController'
@@ -33,10 +33,10 @@
 					changesl: "&",
 					type: "@"
 				},
-				template: function(elem, attr) {
+				template: function (elem, attr) {
 					var text = attr.type === "prev" ? '&lt;' : '&gt;',
 						className = attr.type === "prev" ? 'arrow_prev' : 'arrow_next';
-					return '<div class="arrow '+className+'" ng-click="changesl({current: type})">'+text+'</div>';
+					return '<div class="arrow ' + className + '" ng-click="changesl({current: type})">' + text + '</div>';
 				}
 			}
 		});
