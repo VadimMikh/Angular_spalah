@@ -38,6 +38,6 @@
 						className = attr.type === "prev" ? 'arrow_prev' : 'arrow_next';
 					return '<div class="arrow ' + className + '" ng-click="changesl({current: type})">' + text + '</div>';
 				}
-			}
+			};
 		});
 })();
