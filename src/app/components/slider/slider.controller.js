@@ -23,6 +23,7 @@
             ];
 
            $scope.changeSlide = function(current) {
+               
                if (angular.isNumber(current)) {
                     $scope.activeItem = current;
                } else if (current === 'prev') {
