@@ -45,9 +45,11 @@
 			$location.path('/login');
 		}
 
-		$rootScope.$on('$locationChangeStart', function() {
+		var root = $rootScope;
+
+		root.$on('$locationChangeStart', function(event, next) {
 			var usersIdent2 = angular.fromJson(sessionStorage.getItem('usersIdent')) || '';
-			if (angular.isUndefined(usersIdent2.name)) {
+			if (angular.isUndefined(usersIdent2.name) && !/registrate/gi.test(next)) {
 				//event.preventDefault();
 				$state.go('login');
 			}

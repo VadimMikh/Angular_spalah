@@ -6,9 +6,11 @@
 		.controller('LoginController', loginCtrl);
 
 		function loginCtrl (Registrate, $state) {
+			var vm = this;
 
-			this.login = function () {
-				var userExist = Registrate.getUser(this.name, this.pass);
+			vm.login = function ($event) {
+				$event.preventDefault();
+				var userExist = Registrate.getUser(vm.name, vm.pass);
 				if (userExist) {
 					$state.go('projects');
 				}

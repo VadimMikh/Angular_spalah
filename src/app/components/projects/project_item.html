@@ -5,7 +5,7 @@
       <label>Developers</label>
       <md-select ng-model="projectPage.users" multiple ng-change="projectPage.usersChange()">
         <md-optgroup label="...">
-          <md-option ng-value="user.id" ng-repeat="user in usersLoc">{{user.name}}</md-option>
+          <md-option ng-value="user.id" ng-repeat="user in projectPage.usersLoc">{{user.name}}</md-option>
         </md-optgroup>
       </md-select>
     </md-input-container></br>

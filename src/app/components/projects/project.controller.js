@@ -15,7 +15,7 @@
 			
 			vm.name = usersIdent.name || '';
 
-			$scope.isactive = usersIdent.type === 'dev' ? true : false;
+			vm.isactive = usersIdent.type === 'dev' ? true : false;
 
 			vm.projectsList =  angular.fromJson(localStorage.getItem('projectsList')) || {};
 
@@ -32,7 +32,7 @@
 				$state.go('projectsItem', params );
 			};
 
-			this.hide = function(users) {
+			vm.hide = function(users) {
 				if (users.indexOf(usersIdent.id) !== -1) {
 					return false;
 				} else {
@@ -48,7 +48,7 @@
 
 			$log.info(angular.fromJson(localStorage.getItem('projectsList')));
 
-			$scope.usersLoc = angular.fromJson(localStorage.getItem('usersLoc'));
+			vm.usersLoc = angular.fromJson(localStorage.getItem('usersLoc'));
 
 
 			var projectsList = angular.fromJson(localStorage.getItem('projectsList'));

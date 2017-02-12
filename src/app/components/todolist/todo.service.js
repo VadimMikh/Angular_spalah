@@ -11,7 +11,7 @@
 			
 		return {
 			addItem: function (val) {
-				if (val.task !== '' && val.task) {
+				if (val !== '' && val) {
 					tasks.push(val.task);
 					return tasks;
 				}

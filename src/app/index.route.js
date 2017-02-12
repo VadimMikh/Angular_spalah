@@ -6,7 +6,7 @@
     .config(routerConfig);
 
   /** @ngInject */
-  function routerConfig($stateProvider, $urlRouterProvider) {
+  function routerConfig($stateProvider/*, $urlRouterProvider*/) {
     $stateProvider
       .state('login', {
         url: '/login',
@@ -20,8 +20,8 @@
         controller: 'RegistrateController',
         controllerAs: 'reg'
       })
-      .state('home', {
-        url: '/home',
+      .state('old', {
+        url: '/old',
         templateUrl: 'app/main/main.html'
       })
       .state('projects', {

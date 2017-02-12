@@ -5,15 +5,17 @@
 		.module('angularProject')
 		.controller('CurrencyController', currencyExchangeCtrl);
 
-	function currencyExchangeCtrl ($scope, CurrencyExchange) {
-		$scope.curr1 = '';
-		$scope.curr2 = '';
-		$scope.summ = '';
-		$scope.result = '';
+	function currencyExchangeCtrl (CurrencyExchange) {
+		var vm = this;
 
-		$scope.count = function () {
-			if ($scope.curr1 !== '' && $scope.curr2 !== '') {
-				$scope.result = CurrencyExchange.exchange($scope.curr1, $scope.curr2, $scope.summ);
+		vm.curr1 = '';
+		vm.curr2 = '';
+		vm.summ = '';
+		vm.result = '';
+
+		vm.count = function () {
+			if (vm.curr1 !== '' && vm.curr2 !== '') {
+				vm.result = CurrencyExchange.exchange(vm.curr1, vm.curr2, vm.summ);
 			}
 		}
 	}

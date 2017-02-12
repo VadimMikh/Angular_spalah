@@ -45,14 +45,60 @@
 .arrow {
     position: absolute;
     top: 50%;
+    width: 40px;
+    height: 60px;
     font-size: 48px;
     cursor: pointer;
     transform: translateY(-50%);
     outline: none;
     &_next {
         right: -50px;
+        &:before {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            width: 2px;
+            top: 0;
+            right: 50%;
+            height: 50%;
+            transform: rotate(-20deg);
+            background-color: darkred;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            width: 2px;
+            top: 46%;
+            right: 50%;
+            height: 50%;
+            transform: rotate(20deg);
+            background-color: darkred;
+        }
     }
     &_prev {
         left: -50px;
+        &:before {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            width: 2px;
+            top: 0;
+            left: 50%;
+            height: 50%;
+            transform: rotate(20deg);
+            background-color: darkred;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            display: inline-block;
+            width: 2px;
+            top: 46%;
+            left: 50%;
+            height: 50%;
+            transform: rotate(-20deg);
+            background-color: darkred;
+        }
     }
 }

@@ -40,7 +40,7 @@
 				} else if (exist) {
 					alert('User with this name already exist');
 				} else {
-					$log.info('registration error');
+					$log.warn('registration error');
 				}
 
 			}

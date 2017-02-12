@@ -5,11 +5,12 @@
         .module('angularProject')
         .controller('SliderController', sliderCntrl);
 
-    function sliderCntrl($scope) {
+    function sliderCntrl() {
+        var vm = this;
 
-        $scope.activeItem = 0;
+        vm.activeItem = 0;
 
-        $scope.slides = [
+        vm.slides = [
             'assets/images/pic1.jpg',
             'assets/images/pic2.jpg',
             'assets/images/pic3.jpg',
@@ -22,16 +23,16 @@
             'assets/images/pic10.jpg'
         ];
 
-        $scope.changeSlide = function (current) {
+        vm.changeSlide = function (current) {
             if (angular.isNumber(current)) {
-                $scope.activeItem = current;
+                vm.activeItem = current;
             } else if (current === 'prev') {
-                if ($scope.activeItem < 1) $scope.activeItem = $scope.slides.length - 1;
-                else $scope.activeItem -= 1;
+                if (vm.activeItem < 1) vm.activeItem = vm.slides.length - 1;
+                else vm.activeItem -= 1;
 
             } else if (current === 'next') {
-                if ($scope.activeItem >= $scope.slides.length - 1) $scope.activeItem = 0;
-                else $scope.activeItem += 1;
+                if (vm.activeItem >= vm.slides.length - 1) vm.activeItem = 0;
+                else vm.activeItem += 1;
             }
         };
     }

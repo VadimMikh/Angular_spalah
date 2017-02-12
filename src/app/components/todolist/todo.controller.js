@@ -6,59 +6,61 @@
 		.controller('TodoController', toDoController);
 
 	/** @ngInject */
-	function toDoController($scope, TodoFactory) {
-		$scope.notEmpty = false;
-		$scope.doneNotEmpty = false;
+	function toDoController(TodoFactory) {
+		var vm = this;
 
-		$scope.task = '';
-		$scope.tasks = [];
-		$scope.doneTasks = [];
+		vm.notEmpty = false;
+		vm.doneNotEmpty = false;
 
-		$scope.clear = function () {
-			return $scope.task = '';
+		vm.task = '';
+		vm.tasks = [];
+		vm.doneTasks = [];
+
+		vm.clear = function () {
+			return vm.task = '';
 		}
-		$scope.add = function (val) {
+		vm.add = function (val) {
 			if (val) {
-				$scope.tasks = TodoFactory.addItem(val);
-				_headerToggler($scope.tasks);	
+				vm.tasks = TodoFactory.addItem(val);
+				_headerToggler(vm.tasks);	
 			}
 		}
-		$scope.remove = function(el) {
-			$scope.tasks = TodoFactory.removeItem(el);
-			_headerToggler($scope.tasks);
+		vm.remove = function(el) {
+			vm.tasks = TodoFactory.removeItem(el);
+			_headerToggler(vm.tasks);
 		}
-		$scope.done = function (el) {
+		vm.done = function (el) {
 			TodoFactory.doneItem(el);
-			$scope.tasks = TodoFactory.tasksT;
-			$scope.doneTasks = TodoFactory.tasksTDone;
-			_headerToggler($scope.tasks);
-			_doneHeaderToggler($scope.doneTasks);
+			vm.tasks = TodoFactory.tasksT;
+			vm.doneTasks = TodoFactory.tasksTDone;
+			_headerToggler(vm.tasks);
+			_doneHeaderToggler(vm.doneTasks);
 		}
-		$scope.unDone = function (el) {
+		vm.unDone = function (el) {
 			TodoFactory.unDoneItem(el);
-			$scope.tasks = TodoFactory.tasksT;
-			$scope.doneTasks = TodoFactory.tasksTDone;
-			_headerToggler($scope.tasks);
-			_doneHeaderToggler($scope.doneTasks);
+			vm.tasks = TodoFactory.tasksT;
+			vm.doneTasks = TodoFactory.tasksTDone;
+			_headerToggler(vm.tasks);
+			_doneHeaderToggler(vm.doneTasks);
 		}
-		$scope.removeDone = function(el) {
-			$scope.doneTasks = TodoFactory.removeDoneItem(el);
-			_doneHeaderToggler($scope.doneTasks);
+		vm.removeDone = function(el) {
+			vm.doneTasks = TodoFactory.removeDoneItem(el);
+			_doneHeaderToggler(vm.doneTasks);
 		}
 
 		function _headerToggler () {
-			if ($scope.tasks.length) {	
-				$scope.notEmpty = true;
+			if (vm.tasks.length) {	
+				vm.notEmpty = true;
 			} else  {
-				$scope.notEmpty = false;
+				vm.notEmpty = false;
 			}
 		}
 
 		function _doneHeaderToggler () {
-			if ($scope.doneTasks.length) {	
-				$scope.doneNotEmpty = true;
+			if (vm.doneTasks.length) {	
+				vm.doneNotEmpty = true;
 			} else  {
-				$scope.doneNotEmpty = false;
+				vm.doneNotEmpty = false;
 			}
 		}
 	}
