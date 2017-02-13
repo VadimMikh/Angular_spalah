@@ -21,19 +21,40 @@
 				name: "Project1",
 				desc: "Dedcription1",
 				id: 1,
-				users: [1,2,3,4]
+				users: [1,2,3,4],
+				tasks: [
+					{
+						id: 1,
+						name: 'Test1',
+						done: false
+					}
+				]
 			},
 			{
 				name: "Project2",
 				desc: "Dedcription2",
 				id: 2,
-				users: [1,2,3,4]
+				users: [1,2,3,4],
+				tasks: [
+					{
+						id: 2,
+						name: 'Test2',
+						done: false
+					}
+				]
 			},
 			{
 				name: "Project3",
 				desc: "Dedcription3",
 				id: 3,
-				users: [1,2,3,4]
+				users: [1,2,3,4],
+				tasks: [
+					{
+						id: 3,
+						name: 'Test3',
+						done: false
+					}
+				]
 			}
 		];
 		var plTemp = angular.toJson(projectsList);

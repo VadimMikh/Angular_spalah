@@ -38,6 +38,26 @@
 				}
 				return obj;
 			};
+
+			this.addTask = function (val) {
+				var newObj = {},
+					date = new Date(),
+					components = [
+						date.getYear(),
+						date.getMonth(),
+						date.getDate(),
+						date.getHours(),
+						date.getMinutes(),
+						date.getSeconds(),
+						date.getMilliseconds()
+					];
+
+				newObj.name = val;
+				newObj.done = false;
+				newObj.id = components.join("");
+
+				return newObj;
+			};
 		}
 
 })();

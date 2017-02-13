@@ -37,8 +37,10 @@
         templateUrl: 'app/components/projects/project_item.html'
       })
       .state('projectsItem.inner', {
-        url: "/more",
-        template: '<p>Tasks place</p>'
+        url: "/tasklist",
+        templateUrl: 'app/components/projects/tasklist.tpl.html',
+        controller: 'ProjectPageInnerController',
+        controllerAs: 'tasklist'
       })
       .state('directives', {
         url: "/dirs",

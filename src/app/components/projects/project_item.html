@@ -1,6 +1,6 @@
 <div ng-controller="ProjectPageController as projectPage" class="project_item_block">
-	<input type="text" class="project_item_name" ng-model="projectPage.name" ng-blur="projectPage.nameChange()">
-	<textarea class="project_item_desc" ng-blur="projectPage.descChange()" ng-model="projectPage.desc"></textarea>
+	<input type="text" class="project_item_name no_bordered" ng-model="projectPage.name" ng-blur="projectPage.nameChange()">
+	<textarea class="project_item_desc no_bordered" ng-blur="projectPage.descChange()" ng-model="projectPage.desc"></textarea>
 	 <md-input-container>
       <label>Developers</label>
       <md-select ng-model="projectPage.users" multiple ng-change="projectPage.usersChange()">
@@ -9,6 +9,6 @@
         </md-optgroup>
       </md-select>
     </md-input-container></br>
-    <a ui-sref=".inner" class="more">More</a>
+    <a ui-sref=".inner" class="more">Task List</a>
     <div ui-view></div>
 </div>

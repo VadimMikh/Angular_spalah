@@ -36,7 +36,7 @@
 	width: 500px;
 }
 
-.project_item_block input, .project_item_block textarea {
+.no_bordered {
 	display: block;
 	margin-bottom: 30px;
 	width: 100%;
@@ -45,4 +45,24 @@
 }
 .project_item_name {
 	font-size: 36px;
+}
+.more {
+	font-size: 30px;
+	color: rgb(63,81,181);
+	&:hover {
+		text-decoration: none;
+	}
+}
+.task_item.done p.ng-binding{
+	color: gray;
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: -10px;
+		width: 110%;
+		height: 1px;
+		background-color: gray;
+	}
 }

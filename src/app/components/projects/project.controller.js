@@ -4,7 +4,8 @@
 	angular
 		.module('angularProject')
 		.controller('ProjectsController', projectsCtrl)
-		.controller('ProjectPageController', projectPageCtrl);
+		.controller('ProjectPageController', projectPageCtrl)
+		.controller('ProjectPageInnerController', projectPageInnerCtrl);
 
 		function projectsCtrl ($scope, $state) {
 			var vm = this;
@@ -89,6 +90,67 @@
 
 			vm.usersChange = function () {
 				ProjectsService.usersChangeServ(vm.users, projectsList, $stateParams.projectId);
+
+				var projectsListNew = angular.toJson(projectsList);
+				localStorage.setItem('projectsList', projectsListNew);
+			};
+		}
+
+		function projectPageInnerCtrl ($stateParams, $log, ProjectsService) {
+			var vm = this;
+
+			var projectsList = angular.fromJson(localStorage.getItem('projectsList'));
+
+			var currentObj = (function () {
+				var obj = {};
+				for (var i = projectsList.length - 1; i >= 0; i--) {
+					obj = projectsList[i];
+					if (obj.id == $stateParams.projectId) {
+						return obj;
+					}
+				}
+			})();
+
+			vm.tasks = currentObj.tasks;
+
+			vm.name = '';
+
+			vm.addTask = function () {
+				var newObj = ProjectsService.addTask(vm.name);
+				vm.tasks.push(newObj);
+
+				var projectsListNew = angular.toJson(projectsList);
+				localStorage.setItem('projectsList', projectsListNew);
+
+			};
+
+			vm.removeTask = function (id) {
+				var updatedTasks = vm.tasks.filter(function(el) {
+					return el.id !== id;
+				});
+
+				currentObj.tasks = updatedTasks;
+				vm.tasks = updatedTasks;
+
+				var projectsListNew = angular.toJson(projectsList);
+				localStorage.setItem('projectsList', projectsListNew);
+			};
+
+			vm.changeStatus = function (status, id) {
+				var objTemp = {}, obj = {};
+				for (var i = vm.tasks.length - 1; i >= 0; i--) {
+					obj = vm.tasks[i];
+					if (obj.id === id) {
+						objTemp = obj;
+					}
+				}
+				$log.info(objTemp);
+				if (!status) {
+					objTemp.done = true;
+				} else {
+					objTemp.done = false;
+				}
+				$log.info(objTemp);
 
 				var projectsListNew = angular.toJson(projectsList);
 				localStorage.setItem('projectsList', projectsListNew);
