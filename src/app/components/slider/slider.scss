@@ -37,6 +37,7 @@
         font-size: 0;
         cursor: pointer;
         outline: none;
+        transition: .35s;
         &.active, &:hover {
             background-color: darkred;
         }
@@ -51,6 +52,11 @@
     cursor: pointer;
     transform: translateY(-50%);
     outline: none;
+    border-radius: 5px;
+    transition: .45s;
+    &:hover {
+        background-color: #d8d8d8;
+    }
     &_next {
         right: -50px;
         &:before {
@@ -58,7 +64,7 @@
             position: absolute;
             display: inline-block;
             width: 2px;
-            top: 0;
+            top: 2%;
             right: 50%;
             height: 50%;
             transform: rotate(-20deg);
@@ -69,7 +75,7 @@
             position: absolute;
             display: inline-block;
             width: 2px;
-            top: 46%;
+            top: 48%;
             right: 50%;
             height: 50%;
             transform: rotate(20deg);
@@ -83,7 +89,7 @@
             position: absolute;
             display: inline-block;
             width: 2px;
-            top: 0;
+            top: 2%;
             left: 50%;
             height: 50%;
             transform: rotate(20deg);
@@ -94,7 +100,7 @@
             position: absolute;
             display: inline-block;
             width: 2px;
-            top: 46%;
+            top: 48%;
             left: 50%;
             height: 50%;
             transform: rotate(-20deg);
