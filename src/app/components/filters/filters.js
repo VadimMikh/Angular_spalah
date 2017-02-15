@@ -28,14 +28,4 @@
                 return out;
             };
         });
-
-    /*.filter('showLiked', function () {
-        return function (items) {
-            var filtered = [];
-            filtered = items.filter(function(el) {
-                return el.liked === true;
-            });
-            return filtered;
-        };
-    });*/
 })();

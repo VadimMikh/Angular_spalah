@@ -36,11 +36,11 @@
 					$state.go('login');
 					
 				} else if (pass !== conf_pass) {
-					alert('Not the same passwords');
+					return 'Not the same passwords';
 				} else if (exist) {
-					alert('User with this name already exist');
+					return 'User with this name already exist';
 				} else {
-					$log.warn('registration error');
+					return 'Registration error';
 				}
 
 			}
