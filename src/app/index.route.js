@@ -50,6 +50,10 @@
         url: "/slider",
         templateUrl: 'app/components/slider/slider.html'
       })
+      .state('films', {
+        url: "/films",
+        templateUrl: 'app/components/filters/films.html'
+      })
       .state("otherwise", {
         url: "*path",
         templateUrl: "app/main/error.html"

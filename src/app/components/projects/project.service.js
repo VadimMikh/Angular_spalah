@@ -58,6 +58,16 @@
 
 				return newObj;
 			};
+
+			this.currentObj = function (list, param) {
+				var obj = {};
+				for (var i = list.length - 1; i >= 0; i--) {
+					obj = list[i];
+					if (obj.id == param) {
+						return obj;
+					}
+				}
+			};
 		}
 
 })();
