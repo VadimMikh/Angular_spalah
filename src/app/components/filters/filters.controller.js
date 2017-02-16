@@ -13,7 +13,7 @@
                 id: 1,
                 name: 'Game of Trones',
                 desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur nisi alias maiores. Quo ullam, explicabo maxime fuga beatae temporibus, cupiditate officiis dolorem nihil eius quidem ipsam ut deleniti quasi autem eum eligendi accusamus voluptates, doloribus alias veniam perferendis nobis voluptatibus? Nostrum in laborum cumque facilis delectus sint, nam quae fugit quia qui doloribus neque officia expedita aperiam sunt suscipit aliquid optio provident tenetur, voluptatibus ipsum esse similique, est velit! Culpa.',
-                picture: 'http://static.gq.ru/iblock/7bb/7bbe077c85c2e0685931e23bba5beecb.jpg',
+                picture: 'http://images.techtimes.com/data/images/full/251811/games-of-thrones.png',
                 liked: true
             },
             {

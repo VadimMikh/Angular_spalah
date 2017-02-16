@@ -1,5 +1,5 @@
 <ul class="film_list">
-    <li ng-repeat="filmItem in films | orderBy: order | showLiked: liked track by $index" class="filmItem">
+    <li ng-repeat="filmItem in films | orderBy: order | showLiked: liked track by $index" class="filmItem" ng-class="{compact: mode !== 'full'}">
         <div class="filmItem_inner">
             <div class="filmItem_img_wrap" ng-hide="mode !== 'full'">
                 <img ng-src="{{ filmItem.picture}}" alt="">

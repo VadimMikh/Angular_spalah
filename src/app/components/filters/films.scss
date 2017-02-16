@@ -8,6 +8,10 @@
     }
     padding-bottom: 30px;
     margin-bottom: 30px;
+    &.compact {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
     &_inner {
         display: -webkit-flex;
         display: -moz-flex;
