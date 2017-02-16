@@ -34,6 +34,8 @@
 					localStorage.setItem('usersLoc', usersLoc);
 
 					$state.go('login');
+
+					return 'You have been successfully registed as ' + name;
 					
 				} else if (pass !== conf_pass) {
 					return 'Not the same passwords';
