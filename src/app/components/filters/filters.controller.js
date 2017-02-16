@@ -58,7 +58,6 @@
                 vm.nameSorted = true;
                 vm.descSorted = false;
             } else {
-                //vm.films = vm.firmsArr;
                 vm.order = null;
                 if (vm.liked) vm.films = showLikedFilter(vm.films);
                 vm.nameSorted = false;
@@ -71,7 +70,6 @@
                 vm.descSorted = true;
                 vm.nameSorted = false;
             } else {
-                // vm.films = vm.firmsArr;
                 vm.order = null;
                 if (vm.liked) vm.films = showLikedFilter(vm.films);
                 vm.descSorted = false;
