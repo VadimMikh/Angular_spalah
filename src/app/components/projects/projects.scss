@@ -9,6 +9,9 @@
 		margin: 30px 0;
 		font-size: 48px;
 	}
+	&_name {
+		cursor: pointer;
+	}
 }
 .logout {
 	position: absolute;
@@ -48,7 +51,7 @@
 }
 .more {
 	font-size: 30px;
-	color: rgb(63,81,181);
+	color: #4CAF50;
 	&:hover {
 		text-decoration: none;
 	}

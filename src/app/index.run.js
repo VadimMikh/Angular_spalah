@@ -73,6 +73,12 @@
 			if (angular.isUndefined(usersIdent2.name) && !/registrate/gi.test(next)) {
 				//event.preventDefault();
 				$state.go('login');
+				root.$broadcast('logined', false);
+			}
+			else if (/registrate/gi.test($location.path()) || /login/gi.test($location.path())) {
+				root.$broadcast('logined', false);
+			} else {
+				root.$broadcast('logined', true);
 			}
 		});
 

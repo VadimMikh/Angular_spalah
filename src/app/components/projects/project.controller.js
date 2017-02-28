@@ -26,6 +26,7 @@
 				usersIdent = angular.toJson(clear);
 				sessionStorage.setItem('usersIdent', usersIdent);
 				$state.go('login');
+				$scope.$emit('logout', false);
 			};
 
 			vm.enter = function (id) {
@@ -134,6 +135,10 @@
 
 				var projectsListNew = angular.toJson(projectsList);
 				localStorage.setItem('projectsList', projectsListNew);
+			};
+
+			vm.clear = function () {
+				vm.name = '';
 			};
 
 			vm.changeStatus = function (status, id) {

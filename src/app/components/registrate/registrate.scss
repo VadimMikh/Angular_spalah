@@ -13,9 +13,33 @@
 	background-color: #FFF;
 	-webkit-border-radius: 5px;
 	        border-radius: 5px;
-	padding: 10px 40px 40px 40px;
+	padding: 10px 60px 40px 60px;
 	transform: translate(-50%, -50%);
 }
 .registrate_heading {
 	text-align: center;
+}
+.md-block {
+	position: relative;
+}
+.show_pass {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	right: -40px;
+	transform: translateY(-50%);
+	cursor: pointer;
+	opacity: 0;
+	visibility: hidden;
+	color: rgba(0,0,0,0.54);
+	&:hover {
+		color:rgb(76,175,80);
+	}
+	&:active {
+		color: rgb(67,160,71);
+	}
+	.md-input-has-value & {
+		opacity: 1;
+		visibility: visible;
+	}
 }

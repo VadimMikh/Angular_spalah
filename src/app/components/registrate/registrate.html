@@ -1,34 +1,54 @@
 <div class="registrate_form_wrapper">
-	<form action="#" name="registrate" flex="100" layout='column' class="registrate_form">
+	<form action="#" name="registrate" flex="100" layout='column' class="registrate_form" novalidate>
 		<h2 class="md-display-2 registrate_heading">Registrate</h2>
 		<md-input-container class="md-block" flex="100" flex-gt-sm="100">
 			<label align="left">Name</label>
-			<input required name="name" ng-model="reg.name" md-maxlength="30">
+			<input required name="name" ng-model="reg.name" md-maxlength="50">
 			<div ng-messages="registrate.name.$error" align="left">
 				<div ng-message="md-maxlength">30 letters max</div>
 				<div ng-message="required">Enter your name</div>
 			</div>
 		</md-input-container>
 		<md-input-container class="md-block" flex="100" flex-gt-sm="100">
+			<label align="left">E-mail</label>
+			<input name="mail" type="text" ng-model="reg.mail" ng-pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/" md-maxlength="50">
+			<div ng-messages="registrate.mail.$error" align="left">
+				<div ng-message="md-maxlength">30 letters max</div>
+				<div ng-message="pattern">Enter correct E-mail</div>
+			</div>
+		</md-input-container>
+		<md-input-container class="md-block" flex="100" flex-gt-sm="100">
 			<label align="left">Password</label>
-			<input required name="pass" type="password" ng-model="reg.pass" md-maxlength="30">
+			<input required name="pass" type="{{reg.pass1Type}}" ng-model="reg.pass" md-maxlength="30" ng-pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/">
 			<div ng-messages="registrate.pass.$error" align="left">
 				<div ng-message="md-maxlength">30 letters max</div>
 				<div ng-message="required">Enter password</div>
+				<div ng-message="pattern">UpperCase, LowerCase and Number</div>
+			</div>
+			<div class="show_pass" ng-mousedown="reg.pass1Type = 'text'" ng-mouseup="reg.pass1Type = 'password'">
+				<i class="material-icons">remove_red_eye</i>
 			</div>
 		</md-input-container>
 		<md-input-container class="md-block" flex="100" flex-gt-sm="100">
 			<label align="left">Confirm Password</label>
-			<input required name="conf_pass" type="password" ng-model="reg.conf_pass" md-maxlength="30">
+			<input required name="conf_pass" type="{{reg.pass2Type}}" ng-model="reg.conf_pass" md-maxlength="30">
 			<div ng-messages="registrate.conf_pass.$error" align="left">
 				<div ng-message="md-maxlength">30 letters max</div>
 				<div ng-message="required">Enter password</div>
 			</div>
+			<div class="show_pass" ng-mousedown="reg.pass2Type = 'text'" ng-mouseup="reg.pass2Type = 'password'">
+				<i class="material-icons">remove_red_eye</i>
+			</div>
 		</md-input-container>
-		<md-select ng-model="reg.type" placeholder="Account type" class="md-no-underline">
-			<md-option value="pm">PM</md-option>
-			<md-option value="dev">Developer</md-option>
-		</md-select>
+		<md-input-container class="md-block" flex="100" flex-gt-sm="100">
+			<md-select ng-model="reg.type" placeholder="Account type" class="md-no-underline" required name="role">
+				<md-option value="pm">PM</md-option>
+				<md-option value="dev">Developer</md-option>
+			</md-select>
+			<div ng-messages="registrate.role.$error" align="left">
+				<div ng-message="required">Choose your role</div>
+			</div>
+		</md-input-container>
 		<div layout="row" layout-align="center center">
 			<md-button class="md-raised md-primary" ng-click="reg.regUser()">Registrate</md-button>
 		</div>
