@@ -3,7 +3,7 @@
 		<h2 class="md-display-2 registrate_heading">Registrate</h2>
 		<md-input-container class="md-block" flex="100" flex-gt-sm="100">
 			<label align="left">Name</label>
-			<input required name="name" ng-model="reg.name" md-maxlength="50">
+			<input required name="name" ng-model="reg.name" md-maxlength="50" autocomplete="off">
 			<div ng-messages="registrate.name.$error" align="left">
 				<div ng-message="md-maxlength">30 letters max</div>
 				<div ng-message="required">Enter your name</div>
@@ -19,7 +19,7 @@
 		</md-input-container>
 		<md-input-container class="md-block" flex="100" flex-gt-sm="100">
 			<label align="left">Password</label>
-			<input required name="pass" type="{{reg.pass1Type}}" ng-model="reg.pass" md-maxlength="30" ng-pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/">
+			<input required name="pass" type="{{reg.pass1Type}}" ng-model="reg.pass" md-maxlength="30" ng-pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/" autocomplete="off">
 			<div ng-messages="registrate.pass.$error" align="left">
 				<div ng-message="md-maxlength">30 letters max</div>
 				<div ng-message="required">Enter password</div>
@@ -31,7 +31,7 @@
 		</md-input-container>
 		<md-input-container class="md-block" flex="100" flex-gt-sm="100">
 			<label align="left">Confirm Password</label>
-			<input required name="conf_pass" type="{{reg.pass2Type}}" ng-model="reg.conf_pass" md-maxlength="30">
+			<input required name="conf_pass" type="{{reg.pass2Type}}" ng-model="reg.conf_pass" md-maxlength="30" autocomplete="off">
 			<div ng-messages="registrate.conf_pass.$error" align="left">
 				<div ng-message="md-maxlength">30 letters max</div>
 				<div ng-message="required">Enter password</div>

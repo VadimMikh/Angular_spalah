@@ -25,16 +25,17 @@
   <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+  <div layout="row" layout-sm="column" layout-align="space-around" class="preloader" ng-hide="global.load">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+  </div>
   <div class="header" ng-if="global.userLogined">
     <md-nav-bar nav-bar-aria-label="navigation links">
-      <md-nav-item md-nav-sref="directives" name="directives">Directives</md-nav-item>
-      <md-nav-item md-nav-sref="slider" name="slider">Slider</md-nav-item>
-      <md-nav-item md-nav-sref="films" name="films">Films</md-nav-item>
+      <md-nav-item md-nav-sref="projects" md-sref-active="active" name="projects">Projects</md-nav-item>
+      <md-nav-item md-nav-sref="directives" md-sref-active="active" name="directives">Directives</md-nav-item>
+      <md-nav-item md-nav-sref="slider" md-sref-active="active" name="slider">Slider</md-nav-item>
+      <md-nav-item md-nav-sref="films" md-sref-active="active" name="films">Films</md-nav-item>
     </md-nav-bar>
     <div class="project_page_wrapper" ng-controller="ProjectsController as projects">
-      <div layout="row" class="project_header">
-        <h1 class="user_name md-display-3 text-center" ui-sref="projects" flex="grow">Projects</h1>
-      </div>
       <div layout="row">
         <div flex ui-view="projectList"></div>
         <div flex="25" ui-view="userData"></div>
@@ -45,7 +46,7 @@
     </div>
   </div>
 
-  <div ui-view></div>
+  <div ui-view ng-animate="'view'"></div>
 
   <!-- build:js(src) scripts/vendor.js -->
   <!-- bower:js -->

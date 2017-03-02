@@ -6,8 +6,20 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($scope) {
+  function MainController($scope, $log, $location) {
     var vm = this;
+    
+    /*vm.currentNavItem = function () {
+      var arr = [];
+      if($location.path()) {
+        var urlPath = $location.path();
+        arr = urlPath.split("/");
+      } else {
+        arr = ['projects'];
+      }
+      $log.info(arr);
+      return arr[1];
+    };*/
 
     vm.userLogined = false;
 
@@ -17,5 +29,7 @@
     $scope.$on('logout', function (event, data) {
       vm.userLogined = data;
     });
+
+    vm.load = true;
   }
 })();
