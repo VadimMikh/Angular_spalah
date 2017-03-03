@@ -82,6 +82,20 @@
 			}
 		});
 
+		root.$on('$locationChangeStart', function() {
+			var arr = [], page = '';
+			if($location.path() != '/') {
+				var urlPath = $location.path();
+				arr = urlPath.split("/");
+				page =  arr[1];
+			} else {
+				arr = ['', 'projects'];
+				page = arr[1];
+			}
+			root.$broadcast('curruentPage', page);
+		});
+
+
     $log.debug('runBlock end');
   }
 

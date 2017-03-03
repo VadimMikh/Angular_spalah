@@ -6,20 +6,12 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($scope, $log, $location) {
+  function MainController($rootScope, $scope) {
     var vm = this;
-    
-    /*vm.currentNavItem = function () {
-      var arr = [];
-      if($location.path()) {
-        var urlPath = $location.path();
-        arr = urlPath.split("/");
-      } else {
-        arr = ['projects'];
-      }
-      $log.info(arr);
-      return arr[1];
-    };*/
+
+    $scope.$on('curruentPage', function (event, data) {
+      vm.currentNavItem = data;
+    });
 
     vm.userLogined = false;
 

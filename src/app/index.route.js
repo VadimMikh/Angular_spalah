@@ -33,7 +33,7 @@
         }
       })
       .state('projectsItem', {
-        url: "/project/:projectId",
+        url: "/projects/:projectId",
         templateUrl: 'app/components/projects/project_item.html'
       })
       .state('projectsItem.inner', {

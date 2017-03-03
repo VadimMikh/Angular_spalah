@@ -5,7 +5,7 @@
 		.module('angularProject')
 		.controller('LoginController', loginCtrl);
 
-		function loginCtrl (Registrate, $state, $mdToast) {
+		function loginCtrl (Registrate, $state, $scope, $log, $mdToast) {
 			var vm = this;
 
 			var last = {
@@ -43,10 +43,13 @@
 				var userExist = Registrate.getUser(vm.name, vm.pass);
 				if (userExist) {
 					$state.go('projects');
+				} else if ($scope.login.$invalid) {
+					$scope.login.name.$touched = true;
+					$scope.login.pass.$touched = true;
 				} else {
 					$mdToast.show(
 						$mdToast.simple()
-							.textContent('User not exist')
+							.textContent('Incorrect name or password')
 							.position(pinTo)
 							.hideDelay(3000)
 					);

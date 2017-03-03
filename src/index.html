@@ -29,9 +29,9 @@
     <md-progress-circular md-mode="indeterminate"></md-progress-circular>
   </div>
   <div class="header" ng-if="global.userLogined">
-    <md-nav-bar nav-bar-aria-label="navigation links">
+    <md-nav-bar nav-bar-aria-label="navigation links" md-selected-nav-item="global.currentNavItem">
       <md-nav-item md-nav-sref="projects" md-sref-active="active" name="projects">Projects</md-nav-item>
-      <md-nav-item md-nav-sref="directives" md-sref-active="active" name="directives">Directives</md-nav-item>
+      <md-nav-item md-nav-sref="directives" md-sref-active="active" name="dirs">Directives</md-nav-item>
       <md-nav-item md-nav-sref="slider" md-sref-active="active" name="slider">Slider</md-nav-item>
       <md-nav-item md-nav-sref="films" md-sref-active="active" name="films">Films</md-nav-item>
     </md-nav-bar>
