@@ -1,4 +1,4 @@
-(function() {
+(function () {
 	'use strict';
 
 	angular
@@ -28,7 +28,7 @@
 			return {
 				restrict: 'E',
 				replace: true,
-			vm: {
+				vm: {
 					name: '@',
 					desc: '@',
 					pic: '@',
@@ -36,5 +36,25 @@
 				},
 				templateUrl: 'app/components/directives/directive_item.html'
 			}
+		})
+		.directive('fooBar', function () {
+			return {
+				restrict: 'A',
+				transclude: true,
+				template: '<div><h2><i class="material-icons" ng-mouseover="show = true" ng-mouseout="show = false">remove_red_eye</i> <div class="popup" ng-show="show"></div></h2><ng-transclude></ng-transclude></div>',
+				controller: function ($scope) {
+					$scope.show = false;
+				},
+				link: function (scope, element, attrs, ctrl, transclude) {
+					var	popup = element.find('.popup');
+
+					transclude(scope, function(clone) {
+						popup.append(clone);
+					});
+					
+					element.find('ng-transclude').html('');
+
+				}
+			};
 		});
 })();
